@@ -1,52 +1,77 @@
 body {
   margin: 0;
-  background: #f0f4f8;
-  padding: 20px;
-  font-family: 'Arial', sans-serif;
+  padding: 0;
+  background: #f9fbfd;
+  font-family: 'Poppins', sans-serif;
+  color: #2c3e50;
 }
 
-h1 {
+header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 30px 20px;
   text-align: center;
-  color: #2c3e50;
-  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .tagline {
+  font-size: 16px;
+  margin-top: 6px;
+  color: #cbd5e1;
 }
 
 .container {
   max-width: 600px;
-  margin: auto;
+  margin: 30px auto;
   background: #ffffff;
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-form {
+.order-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 18px;
 }
 
-input, button {
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input {
   padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
   font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #bdc3c7;
+  transition: all 0.3s;
 }
 
-input[type="text"], input[type="number"] {
-  flex: 1;
+input:focus {
+  border-color: #1e3a8a;
+  outline: none;
+  box-shadow: 0 0 5px #1e3a8a33;
 }
 
-button {
-  background-color: #2980b9;
-  color: #ffffff;
+.submit-btn {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
-button:hover {
-  background-color: #3498db;
+.submit-btn:hover {
+  background: #3b82f6;
 }
 
 .orders {
@@ -54,25 +79,58 @@ button:hover {
 }
 
 .bill {
-  border: 1px solid #2c3e50;
-  padding: 20px;
-  margin-top: 15px;
-  border-radius: 8px;
-  background: #ecf0f1;
+  display: flex;
+  background: #f1f5f9;
+  border: 2px dashed #1e3a8a;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .bill-part {
-  margin-bottom: 15px;
+  flex: 1;
+  padding: 20px;
+  border-right: 1px dashed #94a3b8;
+}
+
+.bill-part:last-child {
+  border-right: none;
 }
 
 .bill-part h3 {
   margin-top: 0;
-  color: #2980b9;
+  color: #1e3a8a;
 }
 
-.small {
+.token {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #dc2626;
+}
+
+.print-btn {
+  display: block;
+  margin: 15px auto 0 auto;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.print-btn:hover {
+  background: #059669;
+}
+
+footer {
+  background-color: #1e3a8a;
+  text-align: center;
+  padding: 20px;
   font-size: 14px;
-  color: #7f8c8d;
+  color: #fbfcfd;
+  margin-top: 40px;
 }
 
 @media print {
@@ -89,83 +147,8 @@ button:hover {
     top: 0;
     left: 0;
   }
-}
-/* ...existing code... */
 
-.bill {
-  border: 1px solid #2c3e50;
-  padding: 0;
-  margin-top: 15px;
-  border-radius: 8px;
-  background: #ecf0f1;
-  display: flex;
-  position: relative;
-  overflow: hidden;
-}
-
-.bill-part {
-  width: 50%;
-  padding: 20px 16px 16px 16px;
-  background: #ecf0f1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-}
-
-.bill-part h3 {
-  margin-top: 0;
-  color: #2980b9;
-}
-
-.token {
-  font-size: 1.3em;
-  font-weight: bold;
-  color: #d35400;
-  letter-spacing: 1px;
-  margin: 10px 0 5px 0;
-}
-
-.zigzag-divider {
-  width: 18px;
-  background: repeating-linear-gradient(
-    135deg,
-    #bdc3c7 0px,
-    #bdc3c7 6px,
-    #fff 6px,
-    #fff 12px
-  );
-  height: 100%;
-  position: absolute;
-  left: 48%;
-  top: 0;
-  transform: translateX(-50%);
-  z-index: 2;
-  border-left: 1px dashed #999;
-  border-right: 1px dashed #999;
-  pointer-events: none;
-}
-
-.print-btn {
-  display: block;
-  margin: 18px auto 8px auto;
-  padding: 8px 24px;
-  background: #27ae60;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.print-btn:hover {
-  background: #219150;
-}
-
-@media print {
   .print-btn {
     display: none !important;
   }
-  /* ...existing print styles... */
 }
