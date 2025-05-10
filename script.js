@@ -23,13 +23,13 @@ orderForm.addEventListener("submit", function (e) {
   const billHTML = `
     <div class="bill">
       <div class="bill-part">
-        <h3>👨‍🍳 Kitchen Copy</h3>
+        <h3>👨‍🍳 Kitchen Copy!</h3>
         <p><strong>Item:</strong> ${item}</p>
         <p><strong>Qty:</strong> ${quantity}</p>
         <p class="token">Token #${tokenNumber}</p>
       </div>
       <div class="bill-part">
-        <h3>👤 Customer Copy</h3>
+        <h3>👤 Customer Copy!</h3>
         <p><strong>Item:</strong> ${item}</p>
         <p><strong>Qty:</strong> ${quantity}</p>
         <p class="token">Token #${tokenNumber}</p>
