@@ -2,38 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SRKR Canteen Order</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-  <link rel="icon" href="logo.jpg" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SRKR Canteen Staff Dashboard | Team Karna</title>
+  <link rel="icon" href="logo.jpg" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #f9fafb, #e0f2fe);
+      color: #1f2937;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #1e40af;
+      padding: 24px 0;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .team-logo {
+      height: 60px;
+      margin-bottom: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .team-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 600;
+      color: #1e3a8a;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #4b5563;
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .get-started-btn {
+      padding: 14px 34px;
+      font-size: 17px;
+      font-weight: 500;
+      background: linear-gradient(90deg, #1e40af, #3b82f6);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3);
+    }
+
+    .get-started-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+    }
+
+    footer {
+      background-color: #1e40af;
+      text-align: center;
+      padding: 40px;
+      color: #e5e7eb;
+      font-size: 14px;
+      letter-spacing: 0.4px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .get-started-btn {
+        padding: 12px 24px;
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <h1>🍽️ SRKR Canteen Order Portal</h1>
-    <p class="tagline">Smart. Fast. Organized.</p>
+    <img src="logo.jpg" alt="Team Karna Logo" class="team-logo" />
+    <h2>Team Karna</h2>
   </header>
 
-  <main class="container">
-    <form id="orderForm" class="order-form">
-      <div class="input-group">
-        <label for="foodItem">🍛 Food Item</label>
-        <input type="text" id="foodItem" placeholder="Enter food item" required />
-      </div>
-      <div class="input-group">
-        <label for="quantity">🔢 Quantity</label>
-        <input type="number" id="quantity" placeholder="Enter quantity " min="1"  required />
-      </div>
-      <button type="submit" class="submit-btn">Generate Bill</button>
-    </form>
-
-    <section id="orders" class="orders"></section>
+  <main class="main-content">
+    <h1>SRKR Canteen Staff Dashboard</h1>
+    <p>
+      A streamlined internal tool for SRKR Canteen staff to efficiently issue tokens for food orders. 
+      Built with precision and dedication by <br><strong>Team Karna</strong>.
+    </p>
+    <a href="main.html" class="get-started-btn">Get Started</a>
   </main>
 
   <footer>
-    <p>Made with ❤️ at SRKR Engineering College Canteen</p>
+    &copy; 2025 SRKR Canteen Management &nbsp;|&nbsp; Powered by Team Karna 🚀
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
