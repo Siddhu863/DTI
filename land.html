@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SRKR Canteen Staff Dashboard | Team Karna</title>
+  <link rel="icon" href="logo.jpg" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+   body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom right, #f9fafb, #e0f2fe);
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+    header {
+      background-color: #1e40af;
+      padding: 24px 0;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .team-logo {
+      height: 60px;
+      margin-bottom: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .team-logo:hover {
+      transform: scale(1.05);
+    }
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  min-height: calc(8vh - 140px); /* Adjust based on header + footer height */
+}
+
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #1e3a8a;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #4b5563;
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .get-started-btn {
+      padding: 14px 34px;
+      font-size: 17px;
+      font-weight: 500;
+      background: linear-gradient(90deg, #1e40af, #3b82f6);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3);
+    }
+
+    .get-started-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+    }
+
+    footer {
+      background-color: #1e40af;
+      text-align: center;
+      padding: 40px;
+      color: #e5e7eb;
+      font-size: 14px;
+      letter-spacing: 0.4px;
+    }
+
+    @media (max-width: 600px) {
+  .main-content {
+    padding: 30px 16px;
+    min-height: calc(55vh - 95px); /* Reduced for mobile */
+    height: fit-content;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .get-started-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.jpg" alt="Team Karna Logo" class="team-logo" />
+    <h2>Team Karna</h2>
+  </header>
+
+  <main class="main-content">
+    <h1>SRKR Canteen Staff Dashboard</h1>
+    <p>
+      A streamlined internal tool for SRKR Canteen staff to efficiently issue tokens for food orders. 
+      Built with precision and dedication by <br><strong>Team Karna</strong>.
+    </p>
+    <a href="main.html" class="get-started-btn">Get Started</a>
+  </main>
+
+  <footer>
+    &copy; 2025 SRKR Canteen Management &nbsp;|&nbsp; Powered by Team Karna 🚀
+  </footer>
+
+</body>
+</html>

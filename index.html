@@ -3,134 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SRKR Canteen Staff Dashboard | Team Karna</title>
-  <link rel="icon" href="logo.jpg" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <title>Login – Siddhu Kallakuri</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
+    body {
+      min-height: 100vh;
       margin: 0;
-      padding: 0;
+      font-family: 'Space Mono', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(120deg, #7f53ac 0%, #647dee 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
-
-   body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(to bottom right, #f9fafb, #e0f2fe);
-  color: #1f2937;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-    header {
-      background-color: #1e40af;
-      padding: 24px 0;
+    .login-bg {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      filter: blur(8px) brightness(0.7);
+      z-index: 0;
+    }
+    .glass {
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+      border-radius: 18px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(255,255,255,0.18);
+    }
+    .login-container {
+      position: relative;
+      z-index: 1;
+      width: 350px;
+      max-width: 90vw;
+      padding: 2.5em 2em 2em 2em;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 1s;
+    }
+    .login-header {
       text-align: center;
-      color: #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 2em;
     }
-
-    .team-logo {
-      height: 60px;
-      margin-bottom: 8px;
-      transition: transform 0.3s ease;
+    .login-header i {
+      font-size: 3rem;
+      color: #7f53ac;
+      margin-bottom: 0.5em;
     }
-
-    .team-logo:hover {
-      transform: scale(1.05);
+    .login-header h2 {
+      font-family: 'Orbitron', monospace;
+      color: #647dee;
+      margin-bottom: 0.2em;
+      font-size: 2rem;
+      letter-spacing: 1px;
     }
-
-.main-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 60px 20px;
-  min-height: calc(8vh - 140px); /* Adjust based on header + footer height */
-}
-
-    h1 {
-      font-size: 28px;
-      font-weight: 600;
-      color: #1e3a8a;
-      margin-bottom: 16px;
+    .login-header p {
+      color: #333;
+      font-size: 1rem;
+      opacity: 0.8;
     }
-
-    p {
-      font-size: 18px;
-      color: #4b5563;
-      max-width: 600px;
-      margin-bottom: 40px;
-      line-height: 1.6;
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
     }
-
-    .get-started-btn {
-      padding: 14px 34px;
-      font-size: 17px;
-      font-weight: 500;
-      background: linear-gradient(90deg, #1e40af, #3b82f6);
-      color: white;
+    .form-group {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.22);
+      border-radius: 8px;
+      padding: 0.5em 1em;
+      box-shadow: 0 2px 8px rgba(127, 90, 240, 0.08);
+      transition: box-shadow 0.3s;
+    }
+    .form-group:focus-within {
+      box-shadow: 0 4px 16px rgba(127, 90, 240, 0.18);
+    }
+    .form-group label {
+      color: #7f53ac;
+      font-size: 1.2rem;
+      margin-right: 0.7em;
+    }
+    .form-group input {
       border: none;
-      border-radius: 10px;
+      outline: none;
+      background: transparent;
+      font-size: 1.1rem;
+      flex: 1;
+      padding: 0.7em 0;
+      color: #2c3e50;
+    }
+    .form-group input::placeholder {
+      color: #aaa;
+      opacity: 1;
+    }
+    .btn {
+      width: 100%;
+      padding: 0.8em 0;
+      background: linear-gradient(90deg, #7f53ac, #647dee);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 700;
       cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(30, 64, 175, 0.3);
+      box-shadow: 0 2px 8px rgba(127, 90, 240, 0.08);
+      transition: background 0.3s, transform 0.2s;
     }
-
-    .get-started-btn:hover {
-      transform: scale(1.05);
-      background: linear-gradient(90deg, #2563eb, #60a5fa);
+    .btn:hover {
+      background: linear-gradient(90deg, #647dee, #7f53ac);
+      transform: translateY(-2px) scale(1.03);
     }
-
-    footer {
-      background-color: #1e40af;
-      text-align: center;
-      padding: 40px;
-      color: #e5e7eb;
-      font-size: 14px;
-      letter-spacing: 0.4px;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
     }
-
-    @media (max-width: 600px) {
-  .main-content {
-    padding: 30px 16px;
-    min-height: calc(55vh - 95px); /* Reduced for mobile */
-    height: fit-content;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  .get-started-btn {
-    padding: 12px 24px;
-    font-size: 16px;
-  }
-}
+    @media (max-width: 500px) {
+      .login-container {
+        padding: 1.2em 0.5em;
+        width: 98vw;
+      }
+    }
   </style>
 </head>
 <body>
-
-  <header>
-    <img src="logo.jpg" alt="Team Karna Logo" class="team-logo" />
-    <h2>Team Karna</h2>
-  </header>
-
-  <main class="main-content">
-    <h1>SRKR Canteen Staff Dashboard</h1>
-    <p>
-      A streamlined internal tool for SRKR Canteen staff to efficiently issue tokens for food orders. 
-      Built with precision and dedication by <br><strong>Team Karna</strong>.
-    </p>
-    <a href="main.html" class="get-started-btn">Get Started</a>
-  </main>
-
-  <footer>
-    &copy; 2025 SRKR Canteen Management &nbsp;|&nbsp; Powered by Team Karna 🚀
-  </footer>
-
+  <div class="login-bg"></div>
+  <div class="login-container glass">
+    <div class="login-header">
+      <i class="fas fa-user-circle"></i>
+      <h2>Welcome Back</h2>
+      <p>Please login to continue</p>
+    </div>
+    <form id="login-form" autocomplete="off">
+      <div class="form-group">
+        <label for="username"><i class="fas fa-user"></i></label>
+        <input type="text" id="username" name="username" placeholder="Username" required />
+      </div>
+      <div class="form-group">
+        <label for="password"><i class="fas fa-lock"></i></label>
+        <input type="password" id="password" name="password" placeholder="Password" required />
+      </div>
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = "index.html"; // Redirect without authentication
+    });
+  </script>
 </body>
 </html>

@@ -6,7 +6,7 @@ let waitQueueMap = {};
 
 const prepTimeMap = {
   dosa: 5,
-  idli: 3,
+  idly: 3,
   vada: 4,
   biryani: 10,
   poori: 6,
